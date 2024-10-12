@@ -6,7 +6,8 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 @TeleOp(name="TeleOp")
-public class    BasicOmniOpMode extends Robot {
+public class BasicOmniOpMode extends LinearOpMode {
+    Robot R = new Robot();
     ElapsedTime runtime = new ElapsedTime();
     DcMotor leftFrontDrive = null;
     DcMotor leftBackDrive = null;
@@ -14,7 +15,7 @@ public class    BasicOmniOpMode extends Robot {
     DcMotor rightBackDrive = null;
     @Override
     public void runOpMode() {
-        initmotors();
+        R.initmotors();
         // Ждем нажатия кнопки старт
         telemetry.addData("Status", "Initialized");
         telemetry.update();
@@ -24,6 +25,6 @@ public class    BasicOmniOpMode extends Robot {
 
         // Работаем пока не нажат стоп
         while (opModeIsActive()) {
-            teleop();
+            R.teleop();
         }
     }}

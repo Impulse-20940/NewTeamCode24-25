@@ -36,11 +36,10 @@ public class Robot extends LinearOpMode {
         rightFrontDrive.setDirection(DcMotor.Direction.FORWARD);
         rightBackDrive.setDirection(DcMotor.Direction.FORWARD);
     }
-    double axial   = 0;  // Note: pushing stick forward gives negative value
-    double lateral =  0;
-    double yaw     =  0;
-    public void go (double axial, double lateral, double yaw) {
+    public void direction(double axial, double lateral, double yaw) {
 
+    }
+    public void go (double axial, double lateral, double yaw) {
 
     }
     public void teleop() {

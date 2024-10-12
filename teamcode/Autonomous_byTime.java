@@ -26,7 +26,8 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  */
 
 @Autonomous(name="Autonomous_byTime")
-public class Autonomous_byTime extends Robot {
+public class Autonomous_byTime extends LinearOpMode {
+    Robot R = new Robot();
     // Указываем 4 мотора
     ElapsedTime runtime = new ElapsedTime();
     DcMotor leftFrontDrive = null;
@@ -35,7 +36,7 @@ public class Autonomous_byTime extends Robot {
     DcMotor rightBackDrive = null;
     @Override
     public void runOpMode() {
-        initmotors();
+        R.initmotors();
         // Send telemetry message to signify robot waiting;
         telemetry.addData("Status", "Ready to run");    //
         telemetry.update();
